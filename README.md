@@ -164,7 +164,7 @@ Ethereum Sepolia Testnet
 ### Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/identity-app.git
+git clone https://github.com/m44nss/identity-app.git
 cd identity-app
 ```
 
