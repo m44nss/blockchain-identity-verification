@@ -1,57 +1,280 @@
-# Sample Hardhat 3 Beta Project (`node:test` and `viem`)
+# 🔐 Blockchain-Based Identity Verification System
 
-This project showcases a Hardhat 3 Beta project using the native Node.js test runner (`node:test`) and the `viem` library for Ethereum interactions.
+![Solidity](https://img.shields.io/badge/Solidity-0.8.x-blue)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB)
+![Ethereum](https://img.shields.io/badge/Ethereum-Sepolia-purple)
+![Hardhat](https://img.shields.io/badge/Hardhat-Development-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-To learn more about the Hardhat 3 Beta, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3 Beta](https://hardhat.org/hardhat3-beta-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+## 🌟 Overview
 
-## Project Overview
+The **Blockchain-Based Identity Verification System** is a decentralized application (DApp) developed using **Solidity, React.js, Hardhat, Ethers.js, and MetaMask**. The system enables users to securely register and verify digital identities on the Ethereum blockchain without relying on centralized authorities.
 
-This example project includes:
+Traditional identity management systems are vulnerable to data breaches, tampering, and unauthorized access. This project addresses these challenges by leveraging blockchain technology to provide transparency, immutability, and decentralized verification.
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using [`node:test`](nodejs.org/api/test.html), the new Node.js native test runner, and [`viem`](https://viem.sh/).
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+---
 
-## Usage
+## 🚀 Features
 
-### Running Tests
+✅ Connect MetaMask Wallet
 
-To run all the tests in the project, execute the following command:
+✅ Register Digital Identity on Blockchain
 
-```shell
-npx hardhat test
+✅ Verify Identity Records
+
+✅ Public Smart Contract Deployment
+
+✅ Decentralized Data Storage
+
+✅ Secure Blockchain Transactions
+
+✅ Ethereum Sepolia Network Support
+
+✅ Responsive User Interface
+
+---
+
+## 🏗️ System Architecture
+
+```text
+┌─────────────────┐
+│     User        │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ React Frontend  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Ethers.js API  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│   MetaMask      │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Smart Contract  │
+│   (Solidity)    │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Ethereum Sepolia│
+│    Blockchain   │
+└─────────────────┘
 ```
 
-You can also selectively run the Solidity or `node:test` tests:
+---
 
-```shell
-npx hardhat test solidity
-npx hardhat test nodejs
+## 🛠️ Technology Stack
+
+### Frontend
+
+* React.js
+* JavaScript
+* HTML5
+* CSS3
+* Tailwind CSS
+
+### Blockchain
+
+* Solidity
+* Ethereum Sepolia
+* MetaMask
+
+### Development Tools
+
+* Hardhat
+* Ethers.js
+* Node.js
+* Git & GitHub
+
+---
+
+## 📂 Project Structure
+
+```text
+identity-app/
+│
+├── contracts/
+│   └── Identity.sol
+│
+├── scripts/
+│   └── deploy.js
+│
+├── client/
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── IdentityABI.json
+│   │   └── index.js
+│   │
+│   └── public/
+│
+├── hardhat.config.js
+├── package.json
+└── README.md
 ```
 
-### Make a deployment to Sepolia
+---
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
+## 📜 Smart Contract Functions
 
-To run the deployment to a local chain:
+### Register Identity
 
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
+```solidity
+function registerIdentity(string memory _hash) public
 ```
 
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
+Stores a user's identity data on the blockchain.
 
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
+### Verify Identity
 
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
+```solidity
+function verifyIdentity(
+    address user,
+    string memory _hash
+) public view returns (bool)
 ```
 
-After setting the variable, you can run the deployment with the Sepolia network:
+Checks whether the supplied identity matches the blockchain record.
 
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
+---
+
+## 🌐 Smart Contract Deployment
+
+### Network
+
+Ethereum Sepolia Testnet
+
+### Contract Address
+
+```text
+0x29EfDc621e7df6a363571879C52684d6C177bFcA
 ```
+
+---
+
+## ⚙️ Installation Guide
+
+### Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/identity-app.git
+cd identity-app
+```
+
+### Install Backend Dependencies
+
+```bash
+npm install
+```
+
+### Install Frontend Dependencies
+
+```bash
+cd client
+npm install
+```
+
+### Start React Application
+
+```bash
+npm start
+```
+
+Application runs at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 🔗 Deploy Smart Contract
+
+Compile:
+
+```bash
+npx hardhat compile
+```
+
+Deploy:
+
+```bash
+npx hardhat run scripts/deploy.js --network sepolia
+```
+
+---
+
+## 📊 Project Workflow
+
+1. User connects MetaMask wallet.
+2. Wallet authentication is completed.
+3. User enters identity information.
+4. Smart contract stores identity hash on blockchain.
+5. Identity data becomes immutable.
+6. Verification requests compare submitted data with blockchain records.
+7. Verification result is returned instantly.
+
+---
+
+## 🔒 Security Advantages
+
+* Decentralized Architecture
+* Tamper-Resistant Records
+* Cryptographic Security
+* Transparent Verification
+* Reduced Risk of Data Breaches
+* User-Controlled Identity Management
+
+---
+
+## 📈 Future Enhancements
+
+* IPFS Integration
+* Aadhaar/Passport Verification
+* Zero-Knowledge Proofs (ZKP)
+* NFT-Based Identity Credentials
+* Multi-Factor Authentication
+* Mobile Application Support
+* Multi-Chain Deployment
+* Biometric Verification
+
+---
+
+## 📚 Research Contribution
+
+This project demonstrates the practical implementation of blockchain technology for identity verification. The proposed system eliminates dependency on centralized authorities and provides a secure, transparent, and decentralized framework for managing digital identities.
+
+---
+
+## 👨‍💻 Author
+
+**Manas Tripathi**
+
+B.Tech Computer Science Engineering
+
+Blockchain | Cybersecurity | Full Stack Development | Web3
+
+---
+
+## ⭐ Support
+
+If you found this project useful:
+
+⭐ Star the repository
+
+🍴 Fork the project
+
+🛠️ Contribute to improvements
+
+📢 Share it with the developer community
+
+---
+
+### "Building Trust Through Decentralized Identity Verification 🚀"
